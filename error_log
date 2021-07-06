@@ -1,0 +1,11 @@
+[03-May-2021 12:30:19 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/acfoeduc/public_html/certitodos/conexion.php on line 2
+[17-Jun-2021 20:45:55 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/acfoeduc/public_html/certitodos/conexion.php:2
+Stack trace:
+#0 /home/acfoeduc/public_html/certitodos/certificados.php(3): include()
+#1 {main}
+  thrown in /home/acfoeduc/public_html/certitodos/conexion.php on line 2
+[17-Jun-2021 20:46:02 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/acfoeduc/public_html/certitodos/conexion.php:2
+Stack trace:
+#0 /home/acfoeduc/public_html/certitodos/certificados.php(3): include()
+#1 {main}
+  thrown in /home/acfoeduc/public_html/certitodos/conexion.php on line 2

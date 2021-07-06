@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #f0f0f0;
+  color: #333;
+}
+.container__header {
+  background-color: #0080c0;
+  position: relative;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+  -webkit-box-shadow: 0px 10px 6px -5px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 0px 10px 6px -5px rgba(0, 0, 0, 0.34);
+  box-shadow: 0px 10px 6px -5px rgba(0, 0, 0, 0.34);
+  margin: 0 0 20px 0;
+}
+.container__header--menutop {
+  display: flex;
+  width: 100%;
+  height: 150px;
+}
+.container__header--menutop-logo {
+  width: 120px;
+  height: 120px;
+  margin: 15px 15px 15px 15px;
+  background-color: white;
+}
+
+.container__header--menutop-title {
+  font-size: 2.2rem;
+  margin: auto;
+}
+
+.container__header--menutop-boton {
+  width: 300px;
+  height: 100px;
+  margin: 40px 20px 40px 20px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: inherit;
+  background: none;
+  outline: inherit;
+  border: none;
+}
+.container__header--menubottom {
+  width: 100%;
+  height: 100px;
+}
+.container__header--menubottom-nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  list-style: none;
+  margin: 30px 0 0 0;
+}
+.container__header--menubottom-navitems {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+.container__header--menubottom-navitems a {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+/*-------------------------main section--------------------*/
+
+.container__menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
+}
+
+.container__menu--formulariobuscar {
+  display: flex;
+  width: 600px;
+  height: 100px;
+}
+
+.container__menu--formulariobuscar label {
+  display: flex;
+  justify-content: flex-end;
+  width: 210px;
+  height: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-top: 3px;
+}
+.container__formulariobuscar--entrada {
+  width: 300px;
+  height: 30px;
+  font-size: 1.6rem;
+  border-radius: 10px;
+  margin: 0 0 0 5px;
+}
+
+.container__formulariobuscar--botonbuscar {
+  width: 100px;
+  height: 30px;
+  font-size: 1.5rem;
+  margin: 0 0 0 10px;
+}
+/*------------------------------------------------------------------Style Zebra pagination*----------------------------------------------------------/
+/* common attributes for all the links */
+.pagination a {
+    padding: 4px;
+    border: 1px solid #AAA;
+    color: #333;
+    text-decoration: none;
+    margin-right: 2px;
+    display: block;
+    float: left;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+/* common attributes for the "next page" and "previous page" links */
+.pagination a.navigation {
+    width: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -9000px;
+    border: 1px solid transparent;
+    overflow: hidden
+}
+
+/* hack for transparent borders in IE6 */
+*html .pagination a.navigation {
+    border-color: #000001;
+    filter: chroma(color=#000001);
+}
+
+/* hovered links */
+.pagination a:hover {
+    background-color: #DEDEDE;
+    color: #222;
+}
+
+/* specific attributes for the "next page" and "previous page" links */
+.pagination a.left { background-image: url(larrow.gif) }
+.pagination a.right { background-image: url(rarrow.gif) }
+
+/*  currently selected page; also, the current page doesn't need a hover effect */
+.pagination a.current,
+.pagination a.current:hover {
+    background: #0094D6;
+    border-color: #0094D6;
+    color: #FFF;
+}
+
+/* the "..." separator */
+.pagination span {
+    color: #666;
+    margin-right: 2px;
+    display: block;
+    float: left;
+    padding: 8px 4px
+}
+
+/* disabled links */
+a.disabled {
+    filter: alpha(opacity=20);
+    -khtml-opacity: 0.2;
+    -moz-opacity: 0.2;
+    opacity: 0.2
+}
+
+@media (min-width: 1200px) {
+  .container__menu {
+    flex-direction: row;
+  }
+  .container__menu--formulariobuscar {
+    margin-left: 30px;
+  }
+}

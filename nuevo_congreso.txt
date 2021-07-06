@@ -1,0 +1,14 @@
+
+1. crear nueva carpeta con archivos conexion.php , imprimir.php , e imagen llamada certificado.jpg
+
+2. cambios en los archivos:
+
+switch.php
+imprimir.php
+
+3. subir la base de datos a la tabla auxiliar.
+insertar los datos de la tabla auxiliar a la tabla participantes
+
+
+INSERT INTO participantes (nombre, identi, descarga, congreso) 
+SELECT nombre, identi, descarga, congreso FROM auxiliar
