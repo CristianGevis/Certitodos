@@ -88,8 +88,7 @@ if ($num_registros == 0) {
   </header>
 
   <!-----------------------Section Main----------------------------------------->
-  <main>
-
+  <main class="container__main1">
     <div class="container__menu">
       <form action="verbuscado_nombre.php" method="post" name="form3" class="container__menu--formulariobuscar" id="form3">
         <label>Buscar Nombre: </label>
@@ -185,6 +184,9 @@ if ($num_registros == 0) {
         </tr>
       </table>
     </div>
+  </main>
+  <main class="container__main2">
+  
   </main>
 </body>
 
