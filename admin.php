@@ -79,16 +79,16 @@ if ($num_registros == 0) {
       <h1 class="container__header--menutop-title">ACFO</h1>
       <button type="button" class="container__header--menutop-boton" onclick="window.location.href='desconectar.php'"> CERRAR SESION</button>
     </section>
-    <section class="container__header--menubottom">
-      <ul class="container__header--menubottom-nav">
-        <li class="container__header--menubottom-navitems"><a href="#">Tabla Paticipantes</a></li>
-        <li class="container__header--menubottom-navitems"><a href="#">Cargar Datos</a></li>
-      </ul>
 
-    </section>
+    <ul class="container__header--menubottom-nav">
+      <li class="container__header--menubottom-navitems"><a href="#">Tabla Paticipantes</a></li>
+      <li class="container__header--menubottom-navitems"><a href="#">Cargar Datos</a></li>
+    </ul>
+
   </header>
 
   <!-----------------------Section Main----------------------------------------->
+  <!--section find in datebase-->
   <main class="container__main1">
     <div class="container__menu">
       <form action="verbuscado_nombre.php" method="post" name="form3" class="container__menu--formulariobuscar" id="form3">
@@ -103,93 +103,89 @@ if ($num_registros == 0) {
         <button type="button" class="container__formulariobuscar--botonbuscar" onClick="validar()"> Buscar</button>
       </form>
     </div>
+  <!--section print table participantes-->
+    <h1 class="container__titletable">TABLA PARTICIPANTES</h1>
+    
+      <table class="container__table" >
+        <tr class="container__table--rows">`
+          <td>Nombre</td>
+          <td>Identificación</td>
+          <td>Evento</td>
+          <td>Descarga</td>
+          <td>Editar</td>
+        </tr>
+        <?php
+        while ($fila = mysqli_fetch_array($resul_prov)) {
+          if ($num_fila % 2 == 0) {
+        ?>
+            <tr>
+              <td class="margentexto"><?php echo $fila['nombre']; ?></td>
+              <td class="margentexto"><?php echo $fila['identi']; ?></td>
+              <td class="margentexto">
+                <?php
+                $resul_congre = mysqli_query($conex, "SELECT idcongreso, nombrecongreso FROM congresos WHERE publicado=1 ORDER BY idcongreso ASC");
+                while ($fila1 = mysqli_fetch_row($resul_congre)) {
+                  if ($fila1['0'] == $fila['congreso']) {
+                    echo $fila1['1'];
+                    $eve1 =  $fila1['1'];
+                  }
+                }
+                ?>
+              </td>
 
-    <div class="cont1">
-      <div id="stylized">
-        <p><span style="font-weight:bold; color:#036">PARTICIPANTES: </span></p>
-      </div>
-      <br /><br /><br />
-
-
-      <span>
-        <table sclass="info">
-          <tr id="cabeza">`
-            <td>Nombre</td>
-            <td>Identificación</td>
-            <td>Evento</td>
-            <td>Descarga</td>
-            <td colspan="3">Editar</td>
-          </tr>
+              <td><?php echo $fila['descarga']; ?></td>
+              </td>
+              <td><a class="Ntooltip" href="modifica.php?cod=<?php echo $fila['id']; ?>&eve=<?php echo $eve1; ?>"><img src="imagenes/editar.png" style="border:none" /><span>Editar</span></a></td>
+            </tr>
           <?php
-          while ($fila = mysqli_fetch_array($resul_prov)) {
-            if ($num_fila % 2 == 0) {
+          } else {
           ?>
-              <tr>
-                <td class="margentexto"><?php echo $fila['nombre']; ?></td>
-                <td class="margentexto"><?php echo $fila['identi']; ?></td>
-                <td class="margentexto">
-                  <?php
-                  $resul_congre = mysqli_query($conex, "SELECT idcongreso, nombrecongreso FROM congresos WHERE publicado=1 ORDER BY idcongreso ASC");
-                  while ($fila1 = mysqli_fetch_row($resul_congre)) {
-                    if ($fila1['0'] == $fila['congreso']) {
-                      echo $fila1['1'];
-                      $eve1 =  $fila1['1'];
-                    }
+            <tr>
+              <td class="margentexto"><?php echo $fila['nombre']; ?></td=>
+              <td class="margentexto"><?php echo $fila['identi']; ?></td>
+              <td class="margentexto">
+                <?php
+                $resul_congre = mysqli_query($conex, "SELECT idcongreso, nombrecongreso FROM congresos WHERE publicado=1 ORDER BY idcongreso ASC");
+                while ($fila1 = mysqli_fetch_row($resul_congre)) {
+                  if ($fila1['0'] == $fila['congreso']) {
+                    echo $fila1['1'];
+                    $eve1 =  $fila1['1'];
                   }
-                  ?>
-                </td>
+                }
+                ?>
 
-                <td><?php echo $fila['descarga']; ?></td>
-                </td>
-                <td><a class="Ntooltip" href="modifica.php?cod=<?php echo $fila['id']; ?>&eve=<?php echo $eve1; ?>"><img src="imagenes/editar.png" style="border:none" /><span>Editar</span></a></td>
-              </tr>
-            <?php
-            } else {
-            ?>
-              <tr>
-                <td class="margentexto"><?php echo $fila['nombre']; ?></td=>
-                <td class="margentexto"><?php echo $fila['identi']; ?></td>
-                <td class="margentexto">
-                  <?php
-                  $resul_congre = mysqli_query($conex, "SELECT idcongreso, nombrecongreso FROM congresos WHERE publicado=1 ORDER BY idcongreso ASC");
-                  while ($fila1 = mysqli_fetch_row($resul_congre)) {
-                    if ($fila1['0'] == $fila['congreso']) {
-                      echo $fila1['1'];
-                      $eve1 =  $fila1['1'];
-                    }
-                  }
-                  ?>
+              </td>
+              <td class="margentexto"><?php echo $fila['descarga']; ?></td>
 
-                </td>
-                <td class="margentexto"><?php echo $fila['descarga']; ?></td>
-
-                </td>
-                <td><a class="Ntooltip" href="modifica.php?cod=<?php echo $fila['id']; ?>&eve=<?php echo $eve1; ?>"><img src="imagenes/editar.png" style="border:none" /><span>Editar</span></a></td>
-              </tr>
-            <?php
-            }
-            ?>
+              </td>
+              <td><a class="Ntooltip" href="modifica.php?cod=<?php echo $fila['id']; ?>&eve=<?php echo $eve1; ?>"><img src="imagenes/editar.png" style="border:none" /><span>Editar</span></a></td>
+            </tr>
           <?php
-            //aumentamos en uno el número de filas 
-            $num_fila++;
           }
           ?>
-        </table>
-      </span>
-      <table>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td><?php $paginacion->render(); ?></td>
-        </tr>
+        <?php
+          //aumentamos en uno el número de filas 
+          $num_fila++;
+        }
+        ?>
       </table>
+
+    
+    <table>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><?php $paginacion->render(); ?></td>
+      </tr>
+    </table>
     </div>
   </main>
+
   <main class="container__main2">
-  
+
   </main>
-  
+
 </body>
 
 </html>
