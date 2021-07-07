@@ -71,6 +71,7 @@ if ($num_registros == 0) {
 </head>
 
 <body>
+
   <!---------------------Section Header Menu---------------------------------->
   <header class="container__header">
     <section class="container__header--menutop">
@@ -188,6 +189,7 @@ if ($num_registros == 0) {
   <main class="container__main2">
   
   </main>
+  
 </body>
 
 </html>

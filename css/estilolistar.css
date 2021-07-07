@@ -29,20 +29,24 @@ body {
   height: 150px;
 }
 .container__header--menutop-logo {
-  width: 120px;
+  width: 30%;  
   height: 120px;
   margin: 15px 15px 15px 15px;
   background-color: white;
 }
 
 .container__header--menutop-title {
+  width: 40%;
+  min-width: 200px;
   font-size: 2.2rem;
-  margin: auto;
+  margin: auto 0;
 }
 
 .container__header--menutop-boton {
-  width: 300px;
+  width: 30%;
+  min-width: 200px;
   height: 100px;
+  min-height: 80px;
   margin: 40px 20px 40px 20px;
   font-size: 2.2rem;
   font-weight: bold;
@@ -176,7 +180,7 @@ a.disabled {
     -moz-opacity: 0.2;
     opacity: 0.2
 }
-
+/*----------------------------------------------------------------------------------------------*/
 @media (min-width: 1200px) {
   .container__menu {
     flex-direction: row;
