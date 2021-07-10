@@ -165,6 +165,7 @@ if ($num_registros == 0) {
   </main>
 
   <main class="containes__main--cargaeventos">
+    <h1>CARGAR DATOS EVENTO NUEVO</h1>
   </main>
 
 </body>
