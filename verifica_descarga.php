@@ -5,9 +5,6 @@ include("conexion.php");
 
 $identi = $_POST["identi"];
 $congreso = $_POST["congreso"];
-
-//echo "$identi";
-//echo "$congreso";
 $sql = mysqli_query($conex,"SELECT * FROM participantes WHERE identi='$identi' and congreso='$congreso'");
 $numero = mysqli_num_rows($sql);
 $eve = mysqli_query($conex,"SELECT nombrecongreso FROM congresos WHERE idcongreso='$congreso'");
@@ -30,31 +27,6 @@ if($numero>0){
 	self.location = "certificados.php"
 	</script>';
 }
-
-
-//$rst_clien=mysql_query("SELECT * FROM participantes WHERE id=".$_POST["user"].";",$conex);
-//$fila_clien=mysql_fetch_array($rst_clien);
-
-//$eve = mysqli_query($conex,"SELECT * FROM congresos WHERE nombrecongreso='$congreso'");
-//$evento=mysqli_free_result($eve,0,"nombrecongreso");
-
-	/**if ($numero<1) //opcion1: Si el usuario NO existe o los datos son INCORRRECTOS
-{
-	echo '<script language = javascript>
-	alert("Número de documento no encontrado en el evento '.$evento.' ")
-	self.location = "certificados.php"
-	</script>';
-}
-
-if ($descarga ==1) //opcion1: Si el usuario NO existe o los datos son INCORRRECTOS
-{
-	echo '<script language = javascript>
-	alert("Su certificado del evento '.$evento.' ya fue descargado")
-	self.location = "certificados.php"	
-	</script>';
-}
-*/
-//$cod=$_POST["user"];
 ?>
 
 
@@ -64,9 +36,7 @@ if ($descarga ==1) //opcion1: Si el usuario NO existe o los datos son INCORRRECT
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/estiloconfirma.css"/>
 <title>Confirmar Eliminación</title>
-
 </head>
-
 <body>
 <div class="frm" >
 <table width="420" border="0" align="center" class="tabla">
@@ -88,10 +58,7 @@ if ($descarga ==1) //opcion1: Si el usuario NO existe o los datos son INCORRRECT
 		<br/>
   
     <div align="center">
-    <form action="switch.php" method="post">
-    <input name="cod"  id="cod" value="<?php echo $identi?>" type="hidden">
-    <input name="even"  id="even" value="<?php echo $congreso?>" type="hidden">
-    
+    <form action="switch.php" method="post">    
     <button type="submit" id="boton" >Aceptar</button>
     <button type="button" id="boton" onClick="window.location.href='certificados.php'">Cancelar</button>
     
