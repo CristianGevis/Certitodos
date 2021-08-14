@@ -1,56 +1,74 @@
-@charset "utf-8";
-/* CSS Document */
+*{
+	box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+	
+}
+html{
+	font-family: 'Roboto', sans-serif;
+	font-size: 62.5%;
+}
 body{
- font-family: Verdana, Arial, Helvetica, sans-serif;
- font-size:12px;
- background-color:#f0f0f0;
- }
+	background-color: #225475;
+	
+}
+.container__principal{
+	width: 90%;
+	height: 500px;
+	background-color:rgba(255, 255, 255, 0.15);
+	border-radius: 10px;
+	border:1px solid white;
+	margin:100px auto;
+	
+}
 
-.tabla {
-	background-color:#3356A7;
-	/*border-radius:10px;*/
-	-moz-box-shadow:4px 4px 4px #666;
-	-webkit-box-shadow:4px 4px 4px #666;
-	box-shadow:4px 4px 4px #666;
+.container__principal--title{
+	font-size: 1.8rem;
+	color: white;
+	margin: 30px 0 50px 0;
+	text-align: center;
 }
-.titulo{
-color:#ffffff;
-font-size:22px;
-text-align:center;
-font-family:Arial, Helvetica, sans-serif;
-font-weight:bold;
+.container__principal--warnings{
+	list-style:circle;
+	color: white;
+	font-size: 1.6rem;
+	padding: 0 10px 0 10px;
+	margin: 20px 0 10px 20px;	
 }
-.info{
-color:#ffffff;
-font-size:14px;
-text-align:center;
-font-family:Arial, Helvetica, sans-serif;
-padding-left:10px;
-padding-right:10px;
+
+.container__principal--form{
+	margin-top: 60px;
+	display: flex;
+	justify-content: center;
+	
+	
 }
-#boton 
-{	
-border: 1px solid #666;
-border-radius: 4px;
-height:33px;
-vertical-align:middle;
-width:100px;
+
+.container__principal--form-button{
+	width: 150px;
+	height: 35px;
+	margin:30px 10px 0 10px;
+	background-color:rgba(255, 255, 255, 0.3);
+	color: white;
+	border:1px solid white;
+	border-radius: 7px;
+	-webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.08);
+	-moz-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.08);
+	box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.08);
+
 }
-#boton:hover
-{
-	border: 1px solid #036;
-	border-radius: 4px;
-	height:33px;
-	vertical-align:middle;
-	background:#D9ECFF;
+.container__principal--form-button:hover{
+	margin:25px 10px;
+	height: 46px;
+	color:#225475;
+	border:1px solid #225475;
+	background-color: white;
+	font-size: 1.7rem;	
+	font-weight: bold;
+	
 }
-.frm {
-	width: 900px;
-	height: 600px;
-	background-color:#fff;
-	border: 1px solid #cccccc;	
-	padding:20px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top: 20px;
+@media (min-width: 600px){
+	.container__principal{
+		width: 500px;
+	}
 }

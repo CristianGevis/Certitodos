@@ -14,24 +14,3 @@ function validar_nombre() {
   }
 }
 
-function validar(){
-	
-  if(document.formulario.identi.value=="" )
-  
-  {	
-  alert("Por favor ingrese el número de identificación");
-  
-  }else 
-    {
-    document.getElementById("formulario").submit();
-    document.formulario.identi.value="";			
-    document.formulario.identi.focus();
-    //user=document.formulario.user.value
-    //window.open("impresion/imprimir.php?user="+user);		
-    }
-  }
-  
-  function inicio() {
-        document.formulario.identi.value="";			
-        document.formulario.identi.focus();
-  }
