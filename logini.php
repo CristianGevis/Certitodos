@@ -21,15 +21,22 @@
     }
   </script>
 </head>
+
 <body>
-  <h1 class="container__title">Para uso exclusivo de ACFO </h1>
-  <form action="login.php" method="POST" class="container__form" name="formulario">
-    <label class="container__form--label">Usuario</label>
-    <input type="text" name="user" class="container__form--input">
-    <label class="container__form--label">Contraseña</label>
-    <input type="password" name="pass" class="container__form--input">
-    <button type="button" class="container__form--button" id="boton" onClick="validar()">Aceptar</button>
-  </form>
+  <main class="container__main">
+    <section class="container__head">
+      <img class="container__logo" src="./imagenes/logo-acfo.png" alt="Logo ACFO">
+      <div class="container__title-login">LOGIN ADMINISTRADOR</div>
+    </section>
+    <p class="container__title">PARA USO EXCLUSIVO DE ACFO </p>
+    <form action="login.php" method="POST" id="formulario"  class="container__form" name="formulario">
+      <label class="container__form--label">Usuario</label>
+      <input type="text" name="user" class="container__form--input" >
+      <label class="container__form--label">Contraseña</label>
+      <input type="password" name="pass" class="container__form--input">
+      <button type="button" class="container__form--button" id="boton" onClick="validar()">Aceptar</button>
+    </form>
+  </main>
 </body>
 
 </html>

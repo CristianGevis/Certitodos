@@ -19,37 +19,49 @@ include("conexion.php");
 </head>
 
 <body>
-    <h1 class="container__title">Requisitos para aceder a su certificado</h1>
-    <section class="container___main--information">
-        <h2 class="container__main--information-items"><img src="imagenes/chek.png" />Usted debe haber asistido al evento </h2>
-        <h2 class="container__main--information-items"><img src="imagenes/chek.png" />La fecha del evento ya debe haber pasado </h2>
-        <h2 class="container__main--information-items"><img src="imagenes/chek.png" />Ingrese el número de identificación como lo ingreso al registrarse </h2>
-        <h2 class="container__main--information-items"><img src="imagenes/chek.png" />Puede descargar sus certificados desde el año 2013 hasta la fecha </h2>
-        <h2 class="container__main--information-items"><img src="imagenes/chek.png" />Recuerde que solo podra descargar UNA SOLA VEZ (1) el Certificado por Evento</h2>
-    </section>
-    <form class="container__form" action="verifica_descarga.php" method="POST" id="formulario" name="formulario">
-        <h1 class="container__form--title">Ingrese sus datos</h1>
-        <label class="cotainer__form--titleinput"> Ingrese número de Identificación</label>
-        <input class="container__form--input" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="identi" placeholder="Numero de documento" />
-        <label class="cotainer__form--titleinput">Seleccione un Evento</label>
-        <select class="container__form--list" name="congreso" id="selector">
-            <?php
-            $resul_congre = mysqli_query($conex, "SELECT idcongreso, nombrecongreso FROM congresos WHERE publicado=1 ORDER BY idcongreso ASC");
-            while ($fila = mysqli_fetch_array($resul_congre)) {
-            ?>
-                <option value='<?php echo $fila['idcongreso'] ?>'><?php echo $fila['nombrecongreso'] ?></option>
-            <?php
-            }
-            ?>
-        </select>       
-        <button class="container__form--button" type="button" id="boton" onClick="validar()">Ir al certificado</button>
-        <div class="container__loginAdmin">
-            <a class="container__loginAdmin--submit" href="logini.php">Iniciar Sesion</a>
-            <!--<a style="display:bloc" href="../congresos/logini1.php">Inscritos</a>-->
-        </div>
-    </form>
-    <section>
-    </section>
-</body>
+    <div class="fondo">
+        <main class="container__main">
+            <section class="container__main--title">
+                <img class="container__main--logo" src="./imagenes/logo-acfo.png" alt="logo">
+                <div class="container__main--text">ÁREA DE CERTIFICADOS</div>
+            </section>
+
+            <div class="container__title">REQUISITO PARA ACCEDER AL CERTIFICADO</div>
+            <ul class="container___main--information">
+                <li class="container__main--information-items">Debe haber asistido al evento.</li>
+                <li class="container__main--information-items">La fecha del evento ya debe haber pasado.</li>
+                <li class="container__main--information-items">Ingrese el número de identificación sin puntos, espacios ni guiones.</li>
+            </ul>
+            <div class="container__text--condition">Puede descargar sus certificados desde el año 2013 hasta la fecha</div>
+            <div class="container__condition">Recuerde que solo podra desacargar <b>UNA SOLA VEZ (1)</b> el certificado por Evento</div>
+            <form class="container__form" action="verifica_descarga.php" method="POST" id="formulario" name="formulario">
+                <div class="container__information-cedula">
+                    <label class="cotainer__form--titleinput"> Numero de identificacion:</label>
+                    <input class="container__form--input" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="identi" placeholder="Ingrese el numero aqui" />
+                </div>
+                <div class="container__informatrion-evento">
+                <label class="cotainer__form--titleinput">Seleccione un Evento:</label>
+                <select class="container__form--list" name="congreso" id="selector">
+                    <?php
+                    $resul_congre = mysqli_query($conex, "SELECT idcongreso, nombrecongreso FROM congresos WHERE publicado=1 ORDER BY idcongreso ASC");
+                    while ($fila = mysqli_fetch_array($resul_congre)) {
+                    ?>
+                        <option value='<?php echo $fila['idcongreso'] ?>'><?php echo $fila['nombrecongreso'] ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                </div>
+                <button class="container__form--button" type="button" id="boton" onClick="validar()">Ir al certificado</button>
+                <div class="container__loginAdmin">
+                    <a class="container__loginAdmin--submit" href="logini.php">Iniciar Sesion</a>
+                    <!--<a style="display:bloc" href="../congresos/logini1.php">Inscritos</a>-->
+                </div>
+            </form>
+            <section>
+            </section>
+        </main>
+    </div>
+    </body=>
 
 </html>

@@ -25,27 +25,36 @@ if ($numero != 0) {
 }
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="es">
 
 <head>
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="css/estiloconfirma.css" />
   <title>Confirmacion | ACFO</title>
 </head>
-<body>  
-  <section class="container__principal">
-    <h1 class="container__principal--title">¡ ATENCION !</h1>
-    <h2 class="container__principal--warnings">Solo podrá visualizar su certificado una vez por este medio.</h2>
-    <h2 class="container__principal--warnings">Si está seguro que desea guardar o imprimir su certificado en este momento haga clic en ACEPTAR.</h2>
-    <h2 class="container__principal--warnings">Si prefiere hacerlo en otro momento haga clic en CANCELAR.</h2>    
+
+<body>
+  <main class="container__principal">
+    <section class="container__principal--title">
+      <img class="container__principal--title-logo" src="./imagenes/logo-acfo.png" alt="Logo ACFO">
+      <div class="container__principal--title-terminos">CONFIRMACION DE TERMINOS</div>
+    </section>
+    <p class="container__principal--title-atencion">¡ ATENCION !</p>
+    <ul class="container__principal--warningslist">
+      <li class="container__principal--warnings">Solo podrá visualizar su certificado una vez por este medio.</li>
+      <li class="container__principal--warnings">Si está seguro que desea guardar o imprimir su certificado en este momento haga clic en ACEPTAR.</li>
+      <li class="container__principal--warnings">Si prefiere hacerlo en otro momento haga clic en CANCELAR.</li>
+    </ul>
     <form class="container__principal--form" action="switch.php" method="POST">
-      <input name="cod" id="cod" value="<?php echo $identi?>" type="hidden">
-      <input name="even" id="even" value="<?php echo $congreso?>" type="hidden">
-      <button class="container__principal--form-button" type="submit">Aceptar</button>      
-      <button class="container__principal--form-button" type="button"onClick="window.location.href='certificados.php'">Cancelar</button>
+      <input name="cod" id="cod" value="<?php echo $identi ?>" type="hidden">
+      <input name="even" id="even" value="<?php echo $congreso ?>" type="hidden">
+      <button class="container__principal--form-button" type="submit">Aceptar</button>
+      <button class="container__principal--form-button" type="button" onClick="window.location.href='certificados.php'">Cancelar</button>
     </form>
-  </section>
+  </main>
 </body>
+
 </html>

@@ -1,42 +1,137 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+  --primary-color: #004877;
+  --font-principal: "Avenir";
 }
-html{
-    font-size: 62.5%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-body{
-    background-color: #225475;
-}
-.container__form{
-    display: flex;
-    flex-direction: column;
+html {
+  font-size: 62.5%;
 }
 
-.container__title{
-    font-size: 1.8rem;
-    color: white;
-    text-align: center;
-    margin: 20px 0 20px 0;
+.container__main {
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+.container__head {
+  display: flex;
+  width:100% ;
+  height: 90px;
+  margin-top: 30px;
+}
+.container__logo {
+  width: 180px;
+  height: 60px;
+  margin-left: 10px;
+}
+.container__title-login {
+  text-align: center;
+  font-family: var(--font-principal);
+  color: var(--primary-color);
+  font-size: 2.0rem;
+}
+.container__title {
+  width: 100%;
+  height: 40px;
+  background-color: var(--primary-color);
+  font-family: var(--font-principal);
+  font-size: 1.8rem;
+  color: white;
+  text-align: center;
+  margin: 10px 0 20px 0;
+  padding-top: 8px;
+}
+.container__form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 80px auto;
 }
 
-.container__form--label{
-    font-size: 1.6rem;
-    margin-top: 30px ;
-    color: white;
-    text-align:center;    
+.container__form--label {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  font-family: var(--font-principal);
+  color: black;
+  text-align: center;
+  font-weight: 500;
 }
-.container__form--input{
-    width: 90%;
-	min-width: 200px;
-	height: 30px;
-	color: white;
-	font-weight: bold;
-	border: 0px;
-	border-bottom: 1px solid white;
-	border-radius: 5px;
+.container__form--input {
+  width: 280px;
+  min-width: 200px;
+  height: 30px;
+  font-family: var(--font-principal);
+  text-align: center;
+  color: black;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 10px auto;
+  outline: none;
+}
+
+.container__form--button {
+  width: 160px;
+  padding: 5px 25px;
+  margin: 40px auto;
+  font-family: var(--font-principal);
+  font-size: 1.6rem;
+  color: white;
+  background-color: var(--primary-color);
+  outline: inherit;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-box-shadow: -1px 6px 10px -6px rgba(0, 0, 0, 0.51);
+  box-shadow: -1px 6px 10px -6px rgba(0, 0, 0, 0.51);
+}
+@media (min-width: 1024px) {
+  html {
+    background-color: var(--primary-color);
+  }
+  body {
+    background-image: url("./fondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  .container__main {
+    background-color: white;
+    width: 900px;
+    height: 100vh;
     margin: 0 auto;
-	background-color: transparent;
-	outline: none;
+  }
+  .container__head{
+    margin: 0;
+    padding: 40px 0;
+    height: 180px;
+  }
+  .container__logo{
+    margin:auto;
+    margin-left: 90px;
+    width: 420px;
+    height: 110px;
+  }
+  .container__title-login{
+    padding: 40px 150px;
+    padding-left: 70px;
+    font-size: 4.0rem;
+    padding-top: 10px;
+    
+  }
+  .container__title{
+    height: 60px;
+    font-size: 3.2rem;
+    padding-top: 15px;
+    font-weight: 100;
+    
+  }
 }
